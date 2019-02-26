@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
-
   def index
     @users = User.all
   end
 
-  def new
-    @user = User.new
+  def edit
+    @user = User.find(params[:id])
   end
 
-  def create
-    @user = User.new(user_params)
-    @user.save
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
   end
 
   def show
@@ -27,5 +26,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :qualification, :short_bio, :price, :cuisine, :profile_picture)
   end
-
 end
