@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_172650) do
+ActiveRecord::Schema.define(version: 2019_02_26_104937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_02_25_172650) do
     t.bigint "chef_id"
     t.bigint "customer_id"
     t.float "rating"
-    t.string "status"
+    t.string "status", default: "Pending"
     t.integer "number_of_guests"
     t.jsonb "dietary_requirements"
     t.datetime "created_at", null: false
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_02_25_172650) do
     t.string "profile_picture"
     t.string "qualification"
     t.text "short_bio"
-    t.boolean "availability"
+    t.boolean "availability", default: true
     t.integer "price"
     t.string "cuisine"
     t.index ["email"], name: "index_users_on_email", unique: true
