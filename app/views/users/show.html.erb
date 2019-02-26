@@ -1,1 +1,10 @@
-<h1>Particulars of chef 1</h1>
+<h1>Particulars of chef</h1>
+
+<%= cl_image_tag @user.profile_picture, height: 300, width: 400, crop: :fill %>
+<%= @user.name %>
+<%= @user.cuisine %>
+<%= @user.qualification %>
+
+<%= @user.short_bio %>
+
+
