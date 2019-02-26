@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @chefs = User.where(chef:true)
   end
 
   def edit
