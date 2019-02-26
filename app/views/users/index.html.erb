@@ -1,1 +1,12 @@
 <h1>All our chefs</h1>
+
+<div class="container">
+  <% @users.each do |user| %>
+      <h2><%= user.name %></h2>
+      <%= user.cuisine %>
+      <%= user.price %>
+      <%= link_to "chef's details", user_path(user)%>
+      <% end %>
+    </div>
+  </div>
+
