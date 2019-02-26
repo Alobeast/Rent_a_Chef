@@ -1,8 +1,9 @@
-<h1>This page will display a particular booking details and a message form</h1>
+<h1>This page will display a particular booking details</h1>
 
 <div> Customer: <%= @booking.customer.name %>
   Chef: <%= @booking.chef.name %>
   Status: <%= @booking.status %>
+  meal for <%= @booking.number_of_guests %>
   <p>Messages: (here use messages cards)</p>  <ul> <% @booking.messages.each do |message| %>
       <li><%= message.content %></li>
       <% end %>
