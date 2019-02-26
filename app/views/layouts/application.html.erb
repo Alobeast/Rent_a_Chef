@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-  </head>
-  <body>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>TODO</title>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+</head>
+<body>
+  <!-- <div class="container"> -->
+
+    <nav class="navbar">
+      <div>
+   <!--  <a class="logo" href="#">
+    # <%= image_tag("rent.png") %> -->
+  </a>
+  <span class="navbar-toggle" id="js-navbar-toggle">
+    <i class="fas fa-bars"></i>
+  </span>
+
+</div>
+<div>
+  <ul class="main-nav" id="js-menu">
+    <li>
+      <a href="#" class="nav-links">Home</a>
+    </li>
+    <li>
+      <a href="#" class="nav-links">login</a>
+    </li>
+  </ul>
+  <!-- <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="Avatar" class="avatar"> -->
+</div>
+
+
+</div>
+</nav>
+
+<%= yield %>
+<%= javascript_include_tag 'application' %>
+<%= javascript_pack_tag 'application' %>
+</body>
 </html>
