@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @user.update(user_params)
     @user.chef = true
     @user.save
+    redirect_to bookings_path
   end
 
   def show

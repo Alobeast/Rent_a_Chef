@@ -9,6 +9,7 @@
 <li><%= @user.short_bio %></li>
 </ul>
 <h2>See <%=@user.name %>'s past creations</h2>
+
 <%= cl_image_tag @user.image1, height: 300, width: 400, crop: :fill %>
 <%= cl_image_tag @user.image2, height: 300, width: 400, crop: :fill %>
 <%= cl_image_tag @user.image3, height: 300, width: 400, crop: :fill %>
