@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
+
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where("customer_id = ? OR chef_id = ?", current_user.id,current_user.id)
   end
 
   def new
