@@ -1,26 +1,27 @@
 <div class="container">
   <h1>All our chefs</h1>
 
-  <div class="row">
 
+    <div class="row">
+      <% @chefs.each do |chef| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('');">
           <div class="card-description">
-            <% @users.each do |user| %>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('');">
-                <div class="card-description">
-                  <h2><%= user.name %></h2>
-                    <%= user.cuisine %>
-                    <%= user.price %>
-                    <%= link_to "chef's details", user_path(user)%>
-                </div>
-                <% end %>
-              </div>
-            </div>
-
+            <h2><%= chef.name %></h2>
+            <%= chef.cuisine %>
+            <%= chef.price %>
+            <%= link_to "chef's details", user_path(chef)%>
+          </div>
         </div>
       </div>
-
+      <% end %>
+      <% if @chefs.empty? %>
+      <h2> No chefs </h2>
+      <% end %>
     </div>
+  </div>
+</div>
+
 
 <!-- <div class="card-trip">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">

@@ -4,12 +4,16 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @chef = User.find(params[:user_id])
     @booking = Booking.new
+    @booking.chef = @chef
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.customer = current_user
     @booking.save
+    redirect_to bookings_path
   end
 
   def show
@@ -24,6 +28,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:number_of_guests, :dietary_requirements,)
+    params.require(:booking).permit(:number_of_guests, :dietary_requirements, :chef_id)
   end
 end
