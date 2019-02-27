@@ -1,0 +1,8 @@
+<h1>Book <%= @chef.name %></h1>
+
+
+      <%= simple_form_for @booking do |f| %>
+        <%= f.input :number_of_guests %>
+        <%= f.input :dietary_requirements %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
