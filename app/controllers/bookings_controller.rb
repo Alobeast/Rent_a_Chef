@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.customer = current_user
     @booking.save
+    redirect_to bookings_path
   end
 
   def show
