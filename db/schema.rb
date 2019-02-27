@@ -10,6 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+
 ActiveRecord::Schema.define(version: 2019_02_27_112553) do
 
 
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_112553) do
     t.boolean "availability", default: true
     t.integer "price"
     t.string "cuisine"
+
     t.boolean "chef", default: false
     t.string "image1"
     t.string "image2"

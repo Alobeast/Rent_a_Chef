@@ -1,6 +1,10 @@
 <div class="container">
-  <h1>All our chefs</h1>
 
+  <h1>All our chefs</h1>
+  
+  <% if user_signed_in? %>
+  <%= link_to "log-out", destroy_user_session_path, method: :delete %>
+  <% end %>
 
     <div class="row">
       <% @chefs.each do |chef| %>
