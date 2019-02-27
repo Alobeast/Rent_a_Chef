@@ -27,7 +27,16 @@
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 50px;
 }
+// .footer-aa{
+//   min-height: 100%;
+//   padding-bottom: 135px;
+
+// }
 .footer {
+  // position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background: #f0ece2;
   display: flex;
   align-items: center;
