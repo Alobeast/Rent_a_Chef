@@ -9,4 +9,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   mount_uploader :profile_picture, PhotoUploader
 
+  mount_uploader :image1, PhotoUploader
+  mount_uploader :image2, PhotoUploader
+  mount_uploader :image3, PhotoUploader
 end

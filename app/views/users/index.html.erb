@@ -1,22 +1,27 @@
 <div class="container">
   <h1>All our chefs</h1>
-      <% @chefs.each do |chef| %>
-     <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
-    <div>
-              <h2>$<%= chef.price %></h2>
-              <h2><%= chef.name %></h2>
+
+  <% if user_signed_in? %>
+  <%= link_to "log-out", destroy_user_session_path, method: :delete %>
+  <% end %>
+
+  <% @chefs.each do |chef| %>
+  <div class="card-trip">
+
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+    <div class="card-trip-infos">
+      <div>
+        <h2>$<%= chef.price %></h2>
+        <h2><%= chef.name %></h2>
 
         <h2 class="card-trip-pricing"><%= chef.cuisine %></h2>
-            <%= link_to "chef's details", user_path(chef)%>
+        <%= link_to "chef's details", user_path(chef)%>
 
-      <% if @chefs.empty? %>
-      <h2> No chefs </h2>
-      <% end %>
-</div>
-
-</div>
-</div>
-      <% end %>
+        <% if @chefs.empty? %>
+        <h2> No chefs </h2>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
 </div>

@@ -9,69 +9,85 @@
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
-<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
 <body>
   <!-- <div class="container"> -->
+    <% if current_user %>
+    <div class="navbar-wagon">
+      <!-- Logo -->
+      <a href="/" class="navbar-wagon-brand">
+        <%= image_tag "rent.png" %>
+      </a>
 
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <%= image_tag "rent.png" %>
-  </a>
+      <!-- Right Navigation -->
+      <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+        <%= link_to "Home", root_path, class:"navbar-wagon-item navbar-wagon-link"%>
+        <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Home</a> -->
+        <a href="" class="navbar-wagon-item navbar-wagon-link">Hi, <%= current_user.name %></a>
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Home</a>
+        <!-- Profile picture with dropdown list -->
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li><%= link_to "Dashboard", bookings_path, class:"navbar-wagon-item navbar-wagon-link"%></li>
+              <li><%= link_to "Register to be a chef", edit_user_path(current_user.id), class:"navbar-wagon-item navbar-wagon-link"%></li>
+              <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class:"navbar-wagon-item navbar-wagon-link"%></li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Hi,marc</a>
-
-    <!-- Profile picture with dropdown list -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Become a chef</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
+      <!-- Dropdown appearing on mobile only -->
+      <div class="navbar-wagon-item hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Host</a></li>
+            <li><a href="#">Trips</a></li>
+            <li><a href="#">Messagese</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  <% else %>
 
-  <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Host</a></li>
-        <li><a href="#">Trips</a></li>
-        <li><a href="#">Messagese</a></li>
-      </ul>
+  <div class="navbar-wagon">
+      <!-- Logo -->
+      <a href="/" class="navbar-wagon-brand">
+        <%= image_tag "rent.png" %>
+      </a>
+
+      <!-- Right Navigation -->
+      <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+        <%= link_to "Login", new_user_session_path, class:"navbar-wagon-item navbar-wagon-link"%>
+        <%= link_to "Home", root_path, class:"navbar-wagon-item navbar-wagon-link"%>
+        <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Home</a> -->
+
+
+        <!-- Profile picture with dropdown list -->
+      </div>
+
+      <!-- Dropdown appearing on mobile only -->
+      <div class="navbar-wagon-item hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Host</a></li>
+            <li><a href="#">Trips</a></li>
+            <li><a href="#">Messagese</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-<!-- navbar when not logged in -->
-<!-- <div class="navbar-wagon">
-   Logo -->
-  <!-- <a href="/" class="navbar-wagon-brand">
-    <%= image_tag "rent.png" %>
-  </a>
 
 
-  <-- <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Home</a>
-
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Login</a>
-
-  </div>
-</div>  -->
-
+  <% end %>
 <!-- <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
@@ -82,9 +98,9 @@
   </div>
 </div>
 
- -->
- <div>
-<%= yield %>
+-->
+<div>
+  <%= yield %>
 </div>
 <div class="footer-aa">
 

@@ -1,11 +1,19 @@
 <h1>Particulars of chef</h1>
 
-<%= cl_image_tag @user.profile_picture, height: 300, width: 400, crop: :fill %>
-<%= @user.name %>
-<%= @user.cuisine %>
-<%= @user.qualification %>
+<ul>
+<li><%= cl_image_tag @user.profile_picture, height: 300, width: 400, crop: :fill %></li>
+<li>Chef: <%= @user.name %></li>
+<li>Cuisine: <%= @user.cuisine %></li>
+<li>Qualifications: <%= @user.qualification %></li>
+<li>More about <%= @user.name %>:</li>
+<li><%= @user.short_bio %></li>
+</ul>
+<h2>See <%=@user.name %>'s past creations</h2>
 
-<%= @user.short_bio %>
+<%= cl_image_tag @user.image1, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag @user.image2, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag @user.image3, height: 300, width: 400, crop: :fill %>
 
 
-<%= link_to "Request to book", new_user_booking_path(@user) %>
+<p><%= link_to "Request to book", new_user_booking_path(@user) %></p>
+
