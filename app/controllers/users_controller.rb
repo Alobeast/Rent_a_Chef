@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user.update(user_params)
     @user.chef = true
     @user.save
+    redirect_to bookings_path
   end
 
   def show
@@ -28,6 +29,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :qualification, :short_bio, :price, :cuisine, :profile_picture)
+    params.require(:user).permit(:name, :email, :qualification, :short_bio, :price, :cuisine, :profile_picture, :image1, :image2, :image3)
   end
 end
