@@ -1,6 +1,9 @@
 class BookingsController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [ :index, :new ]
+
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where("customer_id = ? OR chef_id = ?", current_user.id,current_user.id)
   end
 
   def new
@@ -13,6 +16,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.customer = current_user
     @booking.save
+    redirect_to bookings_path
   end
 
   def show
