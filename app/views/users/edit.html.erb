@@ -10,6 +10,12 @@
       <%= f.input :qualification, :label => 'Specify your qualification' %>
       <%= f.input :short_bio, :label => 'Please include a short bio of yourself including your experience and any specialities' %>
       <%= f.input :price, :label => 'Average pricing per person' %>
+      <%= f.input :image1, :label => 'Upload a picture' %>
+      <%= f.input :image1_cache, as: :hidden %>
+      <%= f.input :image2, :label => 'Upload a picture' %>
+      <%= f.input :image2_cache, as: :hidden %>
+      <%= f.input :image3, :label => 'Upload a picture' %>
+      <%= f.input :image3_cache, as: :hidden %>
       <%= f.button :submit, 'Create profile!' %>
       <% end %>
     </div>
