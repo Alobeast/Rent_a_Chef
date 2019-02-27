@@ -1,11 +1,11 @@
-<h1>This Page displays our bookings list</h1>
+<h1>This Page displays only the current user list bookings list</h1>
 
 <h2>All of the following should be contained in individual booking cards</h2>
 
 <ul>
 <% @bookings.each do |booking| %>
-<li>the chef's name is: <%= booking.chef.name %>, the customer's name is: <%= booking.customer.name %>, this will be a meal for <%= booking.number_of_guests %> persons, the booking's status is: <%= booking.status %>
-
+<li>the chef's name is: <%= booking.chef.name %>, the customer's name is: <%= booking.customer.name %>, this will be a meal for <%= booking.number_of_guests %> people, the booking's status is: <%= booking.status %>
+<%= link_to "Go see", booking_path(booking)  %>
   <ul>
     <% if !booking.messages.empty? %>
       <% booking.messages.each do |message| %>

@@ -1,46 +1,22 @@
 <div class="container">
   <h1>All our chefs</h1>
-
-  <div class="row">
-
-          <div class="card-description">
-            <% @users.each do |user| %>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('');">
-                <div class="card-description">
-                  <h2><%= user.name %></h2>
-                    <%= user.cuisine %>
-                    <%= user.price %>
-                    <%= link_to "chef's details", user_path(user)%>
-                </div>
-                <% end %>
-              </div>
-            </div>
-
-        </div>
-      </div>
-
-    </div>
-
-<!-- <div class="card-trip">
+      <% @chefs.each do |chef| %>
+     <div class="card-trip">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
   <div class="card-trip-infos">
     <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-  </div>
+              <h2>$<%= chef.price %></h2>
+              <h2><%= chef.name %></h2>
+
+        <h2 class="card-trip-pricing"><%= chef.cuisine %></h2>
+            <%= link_to "chef's details", user_path(chef)%>
+
+      <% if @chefs.empty? %>
+      <h2> No chefs </h2>
+      <% end %>
 </div>
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
-    </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-  </div>
-</div> -->
+
+</div>
+</div>
+      <% end %>
+</div>
