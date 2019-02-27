@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: [ :index, :new ]
+
   def index
     @bookings = Booking.where("customer_id = ? OR chef_id = ?", current_user.id,current_user.id)
   end

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :edit, :update, :show  ]
   def index
     @users = User.all
     @chefs = User.where(chef:true)
