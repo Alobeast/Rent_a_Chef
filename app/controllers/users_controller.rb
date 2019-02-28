@@ -5,12 +5,18 @@ class UsersController < ApplicationController
     @users = User.all
 
     @query = params[:query]
+    @price = params[:price]
 
-    if params[:query].present?
+    query = [@query].join(" ").strip
 
-      @chefs = User.search_by_cuisine(@query)
+    if !query.empty?
+      @chefs = User.search_by_cuisine_and_price(query)
     else
       @chefs = User.where(chef:true)
+    end
+
+    if @price.present?
+      @chefs = @chefs.where("price < ?", @price)
     end
   end
 

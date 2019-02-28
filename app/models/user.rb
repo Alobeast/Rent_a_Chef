@@ -14,8 +14,8 @@ class User < ApplicationRecord
   mount_uploader :image3, PhotoUploader
 
   include PgSearch
-  pg_search_scope :search_by_cuisine,
-  against: [ :cuisine ],
+  pg_search_scope :search_by_cuisine_and_price,
+  against: [:cuisine, :price],
   using: {
     tsearch: { prefix: true }
   }
