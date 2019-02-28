@@ -5,8 +5,12 @@
  <%#= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a chef"%>
   <%= label_tag(:q, "Chef's speciality:") %>
   <% cuisines = ["","Thai", "Italian","French","Mexican", "Indian", "Japanese"] %>
+  <%= select_tag "query", options_for_select(cuisines, @query) %>
 
-  <%= select_tag "query", options_for_select(cuisines) %>
+  <%= label_tag(:q, "for less than:") %>
+  <% price = ["", 40, 50, 75, 100] %>
+  <%= select_tag "price", options_for_select(price, @price)%>
+  <%= label_tag(:q, "€") %>
   <%= submit_tag "search"%>
   <% end %>
   <%= link_to "See all chefs", users_path, class: "btn btn-primary"%>
