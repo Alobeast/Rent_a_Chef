@@ -33,7 +33,11 @@
         <!-- Profile picture with dropdown list -->
         <div class="navbar-wagon-item">
           <div class="dropdown">
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+
+            <%= image_tag "plate.png", class: "avatar dropdown-toggle", id:"navbar-wagon-menu", "data-toggle":"dropdown"%>
+
+           <!--  <img src="https://simg.nicepng.com/png/small/16-168788_clipart-freeuse-stock-chef-hat-clipart-chef-hat.png" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
+
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li><%= link_to "Dashboard", bookings_path, class:"navbar-wagon-item navbar-wagon-link"%></li>
               <li><%= link_to "Register to be a chef", edit_user_path(current_user.id), class:"navbar-wagon-item navbar-wagon-link"%></li>

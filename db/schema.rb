@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_112553) do
     t.integer "price"
     t.string "cuisine"
     t.boolean "chef", default: false
+ 
     t.string "image1"
     t.string "image2"
     t.string "image3"

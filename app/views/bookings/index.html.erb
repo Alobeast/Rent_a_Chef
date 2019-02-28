@@ -1,19 +1,50 @@
-<h1>This Page displays only the current user list bookings list</h1>
+<div class="container notifications">
+  <h1>Your Bookings!</h1>
 
-<h2>All of the following should be contained in individual booking cards</h2>
 
-<ul>
-<% @bookings.each do |booking| %>
-<li>the chef's name is: <%= booking.chef.name %>, the customer's name is: <%= booking.customer.name %>, this will be a meal for <%= booking.number_of_guests %> people, the booking's status is: <%= booking.status %>
-<%= link_to "Go see", booking_path(booking)  %>
+  <%# @bookings.each do |booking| %>
+  <%#=# booking.chef.name %>
+  <%#=# booking.customer.name %>
+  <%#=# booking.number_of_guests %>
+  <%#=# booking.status %>
+  <%#=# link_to "Go see", booking_path(booking)  %>
+
+  <%# if !booking.messages.empty? %>
+  <%# booking.messages.each do |message| %>
+  <!-- <li><%#= message.content %></li> -->
+  <%# end %>
+  <%# end %>
+  <%# end %>
+
   <ul>
-    <% if !booking.messages.empty? %>
-      <% booking.messages.each do |message| %>
-      <li><%= message.content %></li>
-      <% end %>
+    <% @bookings.each do |booking| %>
+    <li>
+      <div class="notification">
+
+        <div class="notification-content notification-title">
+          <p><small><%= booking.chef.name %></small></p>
+        </div>
+
+        <div class="notification-content notification-main">
+          <p>Meal for <strong><%= booking.number_of_guests %></strong> persons</p>
+          <p> Requirements: <%= booking.dietary_requirements %> </p>
+        </div>
+
+        <div class="notification-content message-status">
+          <p class="status pending"><%= booking.status %></p>
+          <p class="price"><%= booking.chef.price %>€ p.p</p>
+        </div>
+
+
+        <div class="notification-actions">
+          <a href="#">Confirm <i class="far fa-check-circle"></i></a>
+          <a href="#">Refuse <i class="fas fa-ban"></i></a>
+        </div>
+      </div>
+    </li>
     <% end %>
   </ul>
 
-<% end %>
-</ul>
 
+
+</div>

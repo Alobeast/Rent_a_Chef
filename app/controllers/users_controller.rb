@@ -1,8 +1,17 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :edit, :update, :show  ]
+  skip_before_action :authenticate_user!, only: [ :index, :edit, :update, :show ]
+
   def index
     @users = User.all
-    @chefs = User.where(chef:true)
+
+    @query = params[:query]
+
+    if params[:query].present?
+
+      @chefs = User.search_by_cuisine(@query)
+    else
+      @chefs = User.where(chef:true)
+    end
   end
 
   def edit
