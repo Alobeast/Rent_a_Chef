@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.5.3'
 
 gem 'devise'
-
+gem 'pg_search'
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'

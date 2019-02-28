@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
-
 ActiveRecord::Schema.define(version: 2019_02_27_112553) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,8 +53,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_112553) do
     t.boolean "availability", default: true
     t.integer "price"
     t.string "cuisine"
-
-    t.boolean "chef", default: false
+    t.boolean "chef"
     t.string "image1"
     t.string "image2"
     t.string "image3"

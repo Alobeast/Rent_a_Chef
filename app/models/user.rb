@@ -12,4 +12,11 @@ class User < ApplicationRecord
   mount_uploader :image1, PhotoUploader
   mount_uploader :image2, PhotoUploader
   mount_uploader :image3, PhotoUploader
+
+  include PgSearch
+  pg_search_scope :search_by_cuisine,
+  against: [ :cuisine ],
+  using: {
+    tsearch: { prefix: true }
+  }
 end
