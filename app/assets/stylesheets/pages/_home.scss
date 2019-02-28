@@ -3,8 +3,65 @@
 // body{
 //   background-image: url('assets/images/chef.jpg')
 // }
+$bg-color: #F1E9DA;
+$link-text-color: #fff;
+$button-bg-2: #D90368;
+$border-radius: 10px;
+$overlay-color: #fff;
 .container{
-   min-height: 60vh;
+   min-height: 80vh;
+}
+  .button-effect {
+      padding: 30px 0px;
+}
+.effect {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: $link-text-color;
+  text-transform: capitalize;
+  /* background-color: - add your own background-color */
+  font: {
+    family: 'Roboto', sans-serif; /* put your font-family */
+    size: 18px;
+  }
+  padding: 20px 0px;
+  width: 150px;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+/* effect-2 styles */
+.effect.effect-2 {
+  transition: all 0.2s linear 0s;
+  background: #0B7a75;
+
+  &:before {
+    content: "\f0a4";
+    font-family: FontAwesome;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 30px;
+    height: 100%;
+    background-color: rgba($overlay-color,0.3);
+    border-radius: 0px $border-radius $border-radius 0px;
+    transition: all 0.2s linear 0s;
+    text-align: center;
+  }
+
+  &:hover {
+    text-indent: -30px;
+
+    &:before {
+      right: 0;
+      text-indent: 0px;
+    }
+  }
 }
 
 .banner {
@@ -22,7 +79,8 @@
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.4);
+    color: #eaf0ce;
 }
 .banner p {
   font-size: 25px;
@@ -30,17 +88,15 @@
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 50px;
 }
-// .footer-aa{
-//   min-height: 100%;
-//   padding-bottom: 135px;
-
-// }
+.wrapper-grey{
+  background-color: #cfd4c5;
+}
 .footer {
   // position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: #f0ece2;
+  background: #233142;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,7 +109,7 @@
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color: #EAD0CE;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
@@ -63,7 +119,10 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #D23333;
+  color: #EAD0CE;
+}
+.row{
+  align-items: center;
 }
 .card {
   height: 250px;
@@ -74,6 +133,7 @@
   border-radius: 5px;
   margin-bottom: 20px;
   background-color: #eeeeee;
+  position: center;
 }
 .card-user {
   position: absolute;
@@ -110,4 +170,3 @@
 .card-link:hover{
   opacity: 0.1;
 }
-

@@ -1,27 +1,29 @@
-<div class="container">
-  <h1>All our chefs</h1>
-
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
   <%= link_to "log-out", destroy_user_session_path, method: :delete %>
   <% end %>
 
-  <% @chefs.each do |chef| %>
-  <div class="card-trip">
+<div class="container">
+<h2>Book your next Meal</h2>
+<ul class="cards meal">
+ <% @chefs.each do |chef| %>
+  <li class="cards__item">
+    <div class="card meal" >
+      <div class="card__image card__image--fence"><p class="card__text"></p></div>
+      <div class="card__content">
+        <div class="card__title"><%= chef.name %> | <%= chef.cuisine %>
 
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-    <div class="card-trip-infos">
-      <div>
-        <h2>$<%= chef.price %></h2>
-        <h2><%= chef.name %></h2>
+          <div class="card__titlee">price :$<%= chef.price %></div>
+          <!-- <a class="card-link" href="#" ><%=user_path(chef)%></a> -->
+        </div>
 
-        <h2 class="card-trip-pricing"><%= chef.cuisine %></h2>
-        <%= link_to "chef's details", user_path(chef)%>
-
+        <!-- <p class="card__text"><%= chef.cuisine %></p> -->
+        <!-- <h3>$<%= chef.price %></h3> -->
+        <!-- <button class="btn btn--block card__btn">hi,there</button> -->
         <% if @chefs.empty? %>
         <h2> No chefs </h2>
         <% end %>
       </div>
     </div>
-  </div>
-  <% end %>
+  </li>
+<% end %>
 </div>
