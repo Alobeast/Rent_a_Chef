@@ -3,6 +3,9 @@
 // body{
 //   background-image: url('assets/images/chef.jpg')
 // }
+.container{
+   min-height: 60vh;
+}
 
 .banner {
   color: white;
@@ -70,11 +73,13 @@
   position: relative;
   border-radius: 5px;
   margin-bottom: 20px;
+  background-color: #eeeeee;
 }
 .card-user {
   position: absolute;
   right: 10px;
   top: 10px;
+
 }
 .card-category {
   position: absolute;
