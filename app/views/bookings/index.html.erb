@@ -2,18 +2,48 @@
 
 <h2>All of the following should be contained in individual booking cards</h2>
 
+
+<%# @bookings.each do |booking| %>
+<%#=# booking.chef.name %>
+<%#=# booking.customer.name %>
+<%#=# booking.number_of_guests %>
+<%#=# booking.status %>
+<%#=# link_to "Go see", booking_path(booking)  %>
+
+    <%# if !booking.messages.empty? %>
+      <%# booking.messages.each do |message| %>
+      <!-- <li><%#= message.content %></li> -->
+      <%# end %>
+    <%# end %>
+  <%# end %>
+
 <ul>
 <% @bookings.each do |booking| %>
-<li>the chef's name is: <%= booking.chef.name %>, the customer's name is: <%= booking.customer.name %>, this will be a meal for <%= booking.number_of_guests %> people, the booking's status is: <%= booking.status %>
-<%= link_to "Go see", booking_path(booking)  %>
-  <ul>
-    <% if !booking.messages.empty? %>
-      <% booking.messages.each do |message| %>
-      <li><%= message.content %></li>
-      <% end %>
-    <% end %>
-  </ul>
-
+ <li>
+  <div class="notification">
+    <div class="notification-content">
+      <p><small><%= booking.chef.name %></small></p>
+      <p>Meal for <strong><%= booking.number_of_guests %></strong> persons.</p>
+    </div>
+    <div class="notification-actions">
+      <a href="#">Confirm <i class="far fa-check-circle"></i></a>
+      <a href="#">Refuse <i class="fas fa-ban"></i></a>
+    </div>
+  </div>
+</li>
 <% end %>
 </ul>
 
+
+<div class="notification">
+  <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
+  <div class="notification-content">
+    <p><small>9th January</small></p>
+    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div>
