@@ -1,6 +1,17 @@
 <div class="container">
   <h1>All our chefs</h1>
 
+  <%= form_tag users_path, method: :get do %>
+ <%#= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a chef"%>
+  <%= label_tag(:q, "Chef's speciality:") %>
+  <% cuisines = ["","Thai", "Italian","French","Mexican", "Indian", "Japanese"] %>
+
+  <%= select_tag "query", options_for_select(cuisines) %>
+  <%= submit_tag "search"%>
+  <% end %>
+  <%= link_to "See all chefs", users_path, class: "btn btn-primary"%>
+
+
   <% if user_signed_in? %>
   <%= link_to "log-out", destroy_user_session_path, method: :delete %>
   <% end %>
