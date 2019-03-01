@@ -11,15 +11,15 @@
   <% cuisines = ["","Thai", "Italian","French","Mexican", "Indian", "Japanese"] %>
   <%= select_tag "query", options_for_select(cuisines, @query) %>
 
-   <%= label_tag(:q, 'for less than')%>
+   <%= label_tag(:q, 'for less than €')%>
 
   <% price = ["", 50, 75, 100] %>
   <%= select_tag "price", options_for_select(price, @price)%>
-  <%= label_tag(:q, "€") %>
+  <%= label_tag(:q, "") %>
 
 
-  <%= submit_tag "Search", class: "btn btn-primary"%>
-  <%= link_to "Remove filter", users_path, class: "btn btn-primary"%>
+  <%= submit_tag "Search", class: "btn btn-primary edit-form"%>
+  <%= link_to "Remove filter", users_path, class: "edit-form"%>
   <% end %>
 </div>
 
@@ -34,7 +34,7 @@
       <div class="card__content">
         <div class="card__title"><%= chef.name %> | <%= chef.cuisine %>
 
-          <div class="card__titlee">price €<%= chef.price %></div>
+          <div class="card__titlee">price €<%= chef.price %> <i class="fas fa-user"></i></div>
           <!-- <a class="card-link" href="#" ><%=user_path(chef)%></a> -->
         </div>
 
