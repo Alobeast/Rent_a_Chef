@@ -23,18 +23,20 @@ $overlay-color: #fff;
   text-transform: capitalize;
   /* background-color: - add your own background-color */
   font: {
-    family: 'Roboto', sans-serif; /* put your font-family */
+    family: $headers-font; /* put your font-family */
     size: 18px;
   }
   padding: 20px 0px;
   width: 150px;
   border-radius: $border-radius;
   overflow: hidden;
+  opacity: 0.9;
 }
 /* effect-2 styles */
 .effect.effect-2 {
   transition: all 0.2s linear 0s;
   background: #0B7a75;
+  text-decoration: none;
 
   &:before {
     content: "\f0a4";

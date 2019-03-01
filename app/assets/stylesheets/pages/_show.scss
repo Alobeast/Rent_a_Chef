@@ -1,0 +1,27 @@
+@import "home";
+
+.profile {
+  color: $blue;
+}
+
+.show_page_pic img {
+
+  width: 220px;
+  height: 220px;
+}
+
+.chef-profile {
+  text-align: center;
+}
+
+.chef-block {
+  margin-top: 100px;
+ background-color: $yellow;
+ padding: 40px;
+ display: flex;
+ justify-content: space-between;
+ }
+
+.bio {
+  text-align: left;
+}
