@@ -65,15 +65,14 @@ body{
     padding-top: 56.25%; // 16:9 aspect ratio
   }
 }
-.card__image--fence {
-  background-image: url(https://unsplash.it/800/600?image=59);
-}
+
 
 .card__title {
   color: $text;
-  font-size: 2.25rem;
+  font-size: 1.65rem;
   justify-content: space-between;
   text-transform: capitalize;
+
 }
 .card__titlee{
   color:#EC99CD;
