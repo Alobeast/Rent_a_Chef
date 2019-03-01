@@ -17,7 +17,7 @@
 
     <div class="col-sm-6">
       <div class="short-bio"><%= @user.short_bio %></div>
-      <div class="btn-flat"><%= link_to "Book", new_user_booking_path(@user) %> </div>
+      <div><%= link_to "Book", new_user_booking_path(@user), class: "btn-flat" %> </div>
     </div>
   </div>
 
