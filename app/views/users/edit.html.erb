@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3\">
+    <div class="col-sm-6 col-sm-offset-3">
       <h2>Create a Chef account</h2>
 
-      <%= simple_form_for @user do |f| %>
+      <%= simple_form_for @user, html: { class: "form-filling" } do |f| %>
       <%= f.input :profile_picture, :label => 'Upload a profile picture' %>
       <%= f.input :profile_picture_cache, as: :hidden %>
       <%= f.input :cuisine, collection: [["Thai"], ["Italian"],["French"],["Mexican"], ["Indian"], ["Japanese"]], :label => 'What cuisine do you offer?' %>
