@@ -4,7 +4,7 @@
       <h1>Book <%= @chef.name %></h1>
 
 
-      <%= simple_form_for [@user, @booking], html: { class: "request-booking" } do |f| %>
+      <%= simple_form_for [@user, @booking], html: { class: "form-filling" } do |f| %>
       <%= f.input :number_of_guests %>
       <%= f.input :dietary_requirements %>
       <%= f.hidden_field :chef_id %>
