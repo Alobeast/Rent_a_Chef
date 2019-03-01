@@ -37,6 +37,7 @@ $overlay-color: #fff;
   transition: all 0.2s linear 0s;
   background: #0B7a75;
   text-decoration: none;
+  opacity: 1;
 
   &:before {
     content: "\f0a4";

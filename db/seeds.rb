@@ -17,5 +17,3 @@ User.create!(name: 'Thomas', password: 'aaaaaa', email: 'tt@gmail.com', chef: tr
 
 User.create!(name: 'Sofia', password: 'bbbbbb', email: 's@gmail.com', chef: true, cuisine:'Italian', qualification: 'Diploma in Culinary Arts', short_bio: "Having grown up in Nona's kitchen, I've always loved cooking and food and went to culinary school to follow my passion. I have been hosting dinner clubs at pop-up locations throughout London for the past 4 years" , price: 45,
   remote_profile_picture_url: 'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551271353/ymzxbksulovp3khvp3hl.jpg')
-
-
