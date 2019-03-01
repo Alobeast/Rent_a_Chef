@@ -4,10 +4,11 @@
   align-items: center;
   margin-bottom: 8px;
   background: white;
-  opacity: 0.7;
+  opacity: 0.8;
   padding: 8px 16px;
   border: 1px solid rgb(235,235,235);
   border-radius: 5px;
+  height: 90px;
 }
 
 .notifications h1 {
@@ -22,8 +23,6 @@
   list-style-type: none;
   padding-left: 0;
 }
-
-
 
 .notification-title {
   width: 75px;
@@ -118,5 +117,5 @@
   color: red;
 }
 .status.pending {
-  color: lightgrey;
+  color: $pink;
 }
