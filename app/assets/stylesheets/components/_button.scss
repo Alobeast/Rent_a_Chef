@@ -1,0 +1,22 @@
+
+.btn-flat {
+  margin-top: 15px;
+  color: white;
+  width: 150px;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $pink;
+  opacity: 0.8;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-flat:hover {
+  background: $pink;
+  color: white;
+  opacity: 1;
+  text-decoration: none;
+}
+
+

@@ -1,27 +1,59 @@
 @import "home";
 
+.chef-profile {
+  padding: 30px;
+}
+
 .profile {
   color: $blue;
 }
 
 .show_page_pic img {
-
-  width: 220px;
-  height: 220px;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-.chef-profile {
+
+.chef-block {
+  margin-bottom: 2px;
+  margin-top: 20px;
+ background-color: $light-gray;
+ padding: 0px;
+ display: flex;
+ justify-content: space-between;
+ height: 300px;
+ // width: 1100px;
+ }
+
+.short-bio {
+  text-align: justify;
+  margin-top: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  // text-justify: auto;
+}
+
+.credentials{
   text-align: center;
 }
 
-.chef-block {
-  margin-top: 100px;
- background-color: $yellow;
- padding: 40px;
- display: flex;
- justify-content: space-between;
- }
-
-.bio {
+.short-bio {
   text-align: left;
+  padding: 5px;
+}
+
+// .chef-name {
+// color: $pink;
+// font-size: 30px;
+// text-align: center;
+// }
+
+.chef-name {
+ text-align: center;
+}
+
+.book {
+  margin-right: 0px;
 }

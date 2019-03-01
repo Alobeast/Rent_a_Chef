@@ -20,7 +20,9 @@
  <% @chefs.each do |chef| %>
   <li class="cards__item" onclick=document.location="<%= user_path(chef.id) %>">
     <div class="card meal" >
-      <div class="card__image card__image--fence"><p class="card__text"></p></div>
+      <div class="card__image" style="background-image:
+         url('<%= chef.image1.file.nil? ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZi4qr9ACGRBaTtlIrqpOJQwly1cKXQHGXenD6XZBfAEWUlwcD' : cl_image_path(chef.image1) %>')">
+         <p class="card__text"></p></div>
       <div class="card__content">
         <div class="card__title"><%= chef.name %> | <%= chef.cuisine %>
 
