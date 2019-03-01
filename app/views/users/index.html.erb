@@ -1,21 +1,29 @@
 
-  <%= form_tag users_path, method: :get do %>
- <%#= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a chef"%>
-  <%= label_tag(:q, "Chef's speciality:") %>
+<div class="container">
+<h2>Book your next Meal</h2>
+
+<div class="notification search">
+<!--   <a class="fas fa-search"></a>
+ -->  <div class="notification-content search">
+<%= form_tag users_path, method: :get do %>
+
+    <%= label_tag(:q, "Chef's speciality:") %>
   <% cuisines = ["","Thai", "Italian","French","Mexican", "Indian", "Japanese"] %>
   <%= select_tag "query", options_for_select(cuisines, @query) %>
 
-  <%= label_tag(:q, "for less than:") %>
-  <% price = ["", 40, 50, 75, 100] %>
+   <%= label_tag(:q, 'for less than')%>
+
+  <% price = ["", 50, 75, 100] %>
   <%= select_tag "price", options_for_select(price, @price)%>
   <%= label_tag(:q, "€") %>
-  <%= submit_tag "search"%>
+
+
+  <%= submit_tag "Search", class: "btn btn-primary"%>
+  <%= link_to "Remove filter", users_path, class: "btn btn-primary"%>
   <% end %>
-  <%= link_to "See all chefs", users_path, class: "btn btn-primary"%>
+</div>
 
-
-<div class="container">
-<h2>Book your next Meal</h2>
+  </div>
 <ul class="cards meal">
  <% @chefs.each do |chef| %>
   <li class="cards__item" onclick=document.location="<%= user_path(chef.id) %>">
