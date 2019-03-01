@@ -14,15 +14,11 @@
   <%= link_to "See all chefs", users_path, class: "btn btn-primary"%>
 
 
-  <% if user_signed_in? %>
-  <%= link_to "log-out", destroy_user_session_path, method: :delete %>
-  <% end %>
-
 <div class="container">
 <h2>Book your next Meal</h2>
 <ul class="cards meal">
  <% @chefs.each do |chef| %>
-  <li class="cards__item">
+  <li class="cards__item" onclick=document.location="<%= user_path(chef.id) %>">
     <div class="card meal" >
       <div class="card__image card__image--fence"><p class="card__text"></p></div>
       <div class="card__content">

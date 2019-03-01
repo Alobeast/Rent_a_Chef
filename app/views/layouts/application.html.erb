@@ -10,6 +10,7 @@
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+
   <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
@@ -26,7 +27,7 @@
       <!-- Right Navigation -->
       <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-        <%= link_to "Home", root_path, class:"navbar-wagon-item navbar-wagon-link"%>
+        <%= link_to "Home", users_path, class:"navbar-wagon-item navbar-wagon-link"%>
         <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Home</a> -->
         <a href="" class="navbar-wagon-item navbar-wagon-link">Hi, <%= current_user.name %></a>
 
