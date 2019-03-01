@@ -10,16 +10,18 @@ body{
 .cards.meal {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  // grid-gap: 16px;
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 500;
+  // width: 500;
 }
 
 .cards__item {
+  margin:10% 0 0 10%;
+  widows: 90%;
   display: flex;
-  padding: 1rem;
+  // padding: 1rem;
 }
 .card.meal {
   width: 90%;
@@ -74,7 +76,7 @@ body{
   text-transform: capitalize;
 }
 .card__titlee{
-  color:green;
+  color:#EC99CD;
 }
 .card__text {
   flex: 1 auto;
@@ -95,9 +97,6 @@ body{
   flex-grow: 1;
   padding:  14px;
 }
-
-
-
 
 
 

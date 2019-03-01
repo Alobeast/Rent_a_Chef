@@ -4,7 +4,7 @@
       <h2>Create a Chef account</h2>
 
       <%= simple_form_for @user, html: { class: "form-filling" } do |f| %>
-      <%= f.input :profile_picture, :label => 'Upload a profile picture' %>
+      <%= f.input :profile_picture,  :label => 'Upload a profile picture' %>
       <%= f.input :profile_picture_cache, as: :hidden %>
       <%= f.input :cuisine, collection: [["Thai", "Thai"], ["Italian","Italian"],["French","French"],["Mexican","Mexican"], ["Indian","Indian"], ["Japanese","Japanese"]], :label => 'What cuisine do you offer?' %>
       <%= f.input :qualification, :label => 'Specify your qualification' %>
