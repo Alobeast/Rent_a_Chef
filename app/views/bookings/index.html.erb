@@ -19,8 +19,9 @@
   <ul>
     <% @bookings.each do |booking| %>
     <li>
-      <div class="notification" onclick=document.location="<%= booking_path(booking) %>">
 
+      <div class="notification" onclick=document.location="<%= booking_path(booking) %>">
+        <%= cl_image_tag booking.chef.profile_picture, class: "avatar notification-content", alt: "avatar" %>
         <div class="notification-content notification-title">
           <p><small><%= booking.chef.name %></small></p>
         </div>

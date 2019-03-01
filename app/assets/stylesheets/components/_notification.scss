@@ -23,10 +23,7 @@
   padding-left: 0;
 }
 
-.notification .notification-content {
-  flex-grow: 1;
-  padding: 0 24px;
-}
+
 
 .notification-title {
   width: 75px;
@@ -50,7 +47,7 @@
   opacity: 0;
   display: flex;
   transition: ease .3s;
-  width: 200px;
+  width: 250px;
 }
 
 .notification:hover .notification-actions {
