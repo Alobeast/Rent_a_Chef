@@ -6,7 +6,7 @@
       <%= simple_form_for @user, html: { class: "form-filling" } do |f| %>
       <%= f.input :profile_picture, :label => 'Upload a profile picture' %>
       <%= f.input :profile_picture_cache, as: :hidden %>
-      <%= f.input :cuisine, collection: [["Thai"], ["Italian"],["French"],["Mexican"], ["Indian"], ["Japanese"]], :label => 'What cuisine do you offer?' %>
+      <%= f.input :cuisine, collection: [["Thai", "Thai"], ["Italian","Italian"],["French","French"],["Mexican","Mexican"], ["Indian","Indian"], ["Japanese","Japanese"]], :label => 'What cuisine do you offer?' %>
       <%= f.input :qualification, :label => 'Specify your qualification' %>
       <%= f.input :short_bio, :label => 'Please include a short bio of yourself including your experience and any specialities' %>
       <%= f.input :price, :label => 'Average pricing per person' %>
